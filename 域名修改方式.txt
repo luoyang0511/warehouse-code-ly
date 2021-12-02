@@ -1,0 +1,24 @@
+1. 域名解析			域名绑定到一个IP地址
+Java
+2. 服务器
+
+	1. 将Tomcat 端口修改为80端口
+	2.在config目录下的services.xml配置域名和工程的指向
+	
+<Host name="域名" appBase="工程所在的绝对路径"  unpackWARs="true"  autoDeploy="true"  xmlValidation="false"  xmlNamespaceAware="false">
+	<Context path="" docBase="项目名称" reloadable="true"></Context>
+</Host>
+
+
+例如：
+<Host name="www.deng.com" appBase="C:\apache-tomcat-7.0.69\webapps"  unpackWARs="true"  autoDeploy="true"  xmlValidation="false"  xmlNamespaceAware="false">
+	<Context path="" docBase="MoveBooking" reloadable="true"></Context>
+</Host>
+
+
+
+万维网配置方式
+
+局域网，需要多一个步骤
+	C:\Windows\System32\drivers\etc\hosts
+	添加 局域网的IP			域名
